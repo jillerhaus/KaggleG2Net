@@ -1,0 +1,13 @@
+{
+  "id": "johannesillerhaus/g2net-make-tfrecords-8",
+  "title": "g2net-make-tfrecords-8",
+  "code_file": "mkTFRecs.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": ["g2net-gravitational-wave-detection"],
+  "kernel_sources": []
+}
