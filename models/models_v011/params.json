@@ -1,0 +1,1 @@
+{"lr": 0.001, "version": 11, "train_mode": "test", "batch_size": 256, "epochs": 30, "changelog": "set all pool sizes to 8", "bavg_epoch": 8, "bavg_loss": 0.43862995505332947, "bavg_auc": 0.8191072940826416}

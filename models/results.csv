@@ -1,0 +1,39 @@
+,lr,version,train_mode,batch_size,epochs,bavg_epoch,bavg_loss,bavg_auc,changelog,seed
+0,0.001,1,full,256,60,16,0.4517893493175506,0.8380649089813232,,
+1,0.001,2,test,256,60,13,0.4491804242134094,0.822957456111908,moved all relu layers before the pooling layers,
+2,0.001,3,full,256,60,20,0.4428659975528717,0.8377236723899841,"tried on large ds, since hight overfitting",
+3,0.001,5,test,256,60,13,0.4494313299655914,0.8229731321334839,added second layer to first block or reference,
+4,0.001,6,test,256,30,9,0.4422294497489929,0.8201431632041931,added relu activations to all conv layers,
+5,0.001,9,test,256,30,4,0.4807649850845337,0.8123086094856262,set all pool sizes to 1,
+6,0.001,11,test,256,30,8,0.4386299550533294,0.8191072940826416,set all pool sizes to 8,
+7,0.001,13,test,256,30,12,0.4485747814178467,0.8204213976860046,"added second layer to first block with small kernel size, added copy of second block after first, removed dropout in blocks",
+8,0.0001,14,test,256,30,12,0.457615852355957,0.8208757042884827,"added second layer to first block with small kernel size, added copy of second block after first, removed dropout in blocks",
+9,0.0001,17,test,64,30,6,0.4757829010486603,0.8141078948974609,trial of completely different achitecture,
+10,0.0001,33,full,64,60,13,0.4574439525604248,0.825846791267395,trial of completely different achitecture,
+11,0.005,43,full,64,60,43,0.4521967768669128,0.8369128704071045,trial of completely different achitecture,
+12,0.0001,47,full,64,60,9,0.452418714761734,0.8364643454551697,model before was standard model with 0.001 no mixed precision. now 0.005 to test numerical stability issues. added seed,42.0
+13,0.0001,55,full,64,60,4,0.4518512785434723,0.8333021402359009,removed dropout layer in conv,42.0
+14,0.0001,57,full,128,20,9,0.4340632557868957,0.8359219431877136,"before: removed 2 fully connected layers. now: added back in the dropout layer before final layer, increasing bs",42.0
+15,0.0001,61,full,256,3,2,0.483809232711792,0.82402503490448,"removed dropout, flatten, added lstm",42.0
+16,0.0001,64,full,256,10,7,0.4656736552715301,0.8240232467651367,removed 2 layers in larger block,42.0
+17,0.0001,66,full,256,10,6,0.4602254033088684,0.8271901607513428,added back one layer,42.0
+18,0.0001,67,full,256,10,7,0.4540828764438629,0.8277258276939392,third layer,42.0
+19,0.0001,68,full,256,10,7,0.4558974504470825,0.8276998400688171,doubled the first layer and added a second one to the input,42.0
+20,0.001,70,full,256,10,9,0.4671934247016907,0.8320034742355347,base model,42.0
+21,0.001,72,full,256,10,9,0.4834519922733307,0.8240979313850403,took out the fully connected layers before the detection layer,42.0
+22,0.001,73,full,256,10,9,0.4727979004383087,0.8304269313812256,added back one fully connected layer,42.0
+23,0.0001,75,full,256,10,9,0.4540008306503296,0.8303810358047485,"doubled pool size, except for last, doubled number of filters in all layers. lr/10, because nan",42.0
+24,0.001,76,full,256,10,6,0.4692063331604004,0.8322698473930359,base model with same padding,42.0
+25,0.0001,78,full,256,40,12,0.4424426257610321,0.8413059115409851,doubled last layer in all blocks. lr/10,42.0
+26,0.0005,79,full,256,40,25,0.4392576515674591,0.8425779342651367,doubled last layer in all blocks doubled size of first layer. lr*5,42.0
+27,0.0005,83,full,256,40,27,0.4390514194965362,0.8415364623069763,added dropout layers to dense layers,42.0
+28,0.0001,88,full,256,40,8,0.4530917108058929,0.834111213684082,everything had 3 layers now and relu activation,42.0
+29,0.0001,92,full,256,100,17,0.4348364472389221,0.8323007225990295,dropout layers,42.0
+30,0.0001,110,full,256,100,11,0.4700930714607239,0.8158355355262756,dropout layers,42.0
+31,0.0001,113,full,256,100,8,0.4762698709964752,0.8138890266418457,dropout layers,42.0
+32,2e-05,119,full,256,100,36,0.4635505378246307,0.8123695850372314,"new dataset using best model (base model with 'same' and doubled layers), added another dense layer",42.0
+33,0.0002,124,full,256,100,23,0.4481961727142334,0.8271871209144592,10x lr,42.0
+34,0.0001,134,full,256,100,12,0.4671851992607116,0.8262501358985901,1/4 lr,42.0
+35,0.0001,135,full,256,100,9,0.4441642761230469,0.8481619954109192,1/4 lr,42.0
+36,0.0001,136,full,256,100,21,0.4205001890659332,0.8543319702148438,1/4 lr,42.0
+37,0.0001,137,full,256,100,31,0.3644496500492096,0.8764021396636963,1/4 lr,42.0

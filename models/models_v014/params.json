@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 14, "train_mode": "test", "batch_size": 256, "epochs": 30, "changelog": "added second layer to first block with small kernel size, added copy of second block after first, removed dropout in blocks", "bavg_epoch": 12, "bavg_loss": 0.45761585235595703, "bavg_auc": 0.8208757042884827}

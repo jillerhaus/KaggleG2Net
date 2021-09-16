@@ -1,0 +1,1 @@
+{"lr": 0.001, "version": 5, "train_mode": "test", "batch_size": 256, "epochs": 60, "changelog": "added second layer to first block or reference", "bavg_epoch": 13, "bavg_loss": 0.44943132996559143, "bavg_auc": 0.8229731321334839}

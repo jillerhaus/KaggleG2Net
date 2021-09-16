@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 57, "train_mode": "full", "batch_size": 128, "epochs": 20, "seed": 42, "changelog": "before: removed 2 fully connected layers. now: added back in the dropout layer before final layer, increasing bs", "bavg_epoch": 9, "bavg_loss": 0.43406325578689575, "bavg_auc": 0.8359219431877136}

@@ -1,0 +1,1 @@
+{"lr": 0.001, "version": 72, "train_mode": "full", "batch_size": 256, "epochs": 10, "seed": 42, "changelog": "took out the fully connected layers before the detection layer", "bavg_epoch": 9, "bavg_loss": 0.4834519922733307, "bavg_auc": 0.8240979313850403}

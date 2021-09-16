@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 66, "train_mode": "full", "batch_size": 256, "epochs": 10, "seed": 42, "changelog": "added back one layer", "bavg_epoch": 6, "bavg_loss": 0.4602254033088684, "bavg_auc": 0.8271901607513428}

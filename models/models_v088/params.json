@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 88, "train_mode": "full", "batch_size": 256, "epochs": 40, "seed": 42, "changelog": "everything had 3 layers now and relu activation", "bavg_epoch": 8, "bavg_loss": 0.45309171080589294, "bavg_auc": 0.834111213684082}

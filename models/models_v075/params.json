@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 75, "train_mode": "full", "batch_size": 256, "epochs": 10, "seed": 42, "changelog": "doubled pool size, except for last, doubled number of filters in all layers. lr/10, because nan", "bavg_epoch": 9, "bavg_loss": 0.4540008306503296, "bavg_auc": 0.8303810358047485}

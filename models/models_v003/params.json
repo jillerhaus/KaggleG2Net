@@ -1,0 +1,1 @@
+{"lr": 0.001, "version": 3, "train_mode": "full", "batch_size": 256, "epochs": 60, "changelog": "tried on large ds, since hight overfitting", "bavg_epoch": 20, "bavg_loss": 0.4428659975528717, "bavg_auc": 0.8377236723899841}

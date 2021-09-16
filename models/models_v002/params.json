@@ -1,0 +1,1 @@
+{"lr": 0.001, "version": 2, "train_mode": "test", "batch_size": 256, "epochs": 60, "changelog": "moved all relu layers before the pooling layers", "bavg_epoch": 13, "bavg_loss": 0.4491804242134094, "bavg_auc": 0.822957456111908}

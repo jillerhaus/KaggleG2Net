@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 17, "train_mode": "test", "batch_size": 64, "epochs": 30, "changelog": "trial of completely different achitecture", "bavg_epoch": 6, "bavg_loss": 0.4757829010486603, "bavg_auc": 0.8141078948974609}

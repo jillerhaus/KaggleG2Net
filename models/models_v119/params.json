@@ -1,0 +1,1 @@
+{"lr": 2e-05, "version": 119, "train_mode": "full", "batch_size": 256, "epochs": 100, "seed": 42, "changelog": "new dataset using best model (base model with 'same' and doubled layers), added another dense layer", "bavg_epoch": 36, "bavg_loss": 0.46355053782463074, "bavg_auc": 0.8123695850372314}

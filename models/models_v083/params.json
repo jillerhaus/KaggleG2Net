@@ -1,0 +1,1 @@
+{"lr": 0.0005, "version": 83, "train_mode": "full", "batch_size": 256, "epochs": 40, "seed": 42, "changelog": "added dropout layers to dense layers", "bavg_epoch": 27, "bavg_loss": 0.43905141949653625, "bavg_auc": 0.8415364623069763}

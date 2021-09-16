@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 61, "train_mode": "full", "batch_size": 256, "epochs": 3, "seed": 42, "changelog": "removed dropout, flatten, added lstm", "bavg_epoch": 2, "bavg_loss": 0.483809232711792, "bavg_auc": 0.82402503490448}

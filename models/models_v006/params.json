@@ -1,0 +1,1 @@
+{"lr": 0.001, "version": 6, "train_mode": "test", "batch_size": 256, "epochs": 30, "changelog": "added relu activations to all conv layers", "bavg_epoch": 9, "bavg_loss": 0.4422294497489929, "bavg_auc": 0.8201431632041931}
