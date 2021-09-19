@@ -17,7 +17,7 @@ import os
 INPUT_DIR = "../input/g2net-gravitational-wave-detection"
 train_df = pd.read_csv(f"{INPUT_DIR}/training_labels_paths.csv")
 test_df = pd.read_csv(f"{INPUT_DIR}/test_paths.csv")
-savedir = "../input/filtered-whitened-inverted-tfrec"
+savedir = "../input/tfrec"
 
 
 # In[3]:
@@ -61,13 +61,13 @@ def save_files(rg_n, df=train_df):
 
 
             zpk = filts[i]
-            ts = ts.filter(zpk, filtfilt=True)
-            ts = ts.whiten(0.5, 0.25)
+            # ts = ts.filter(zpk, filtfilt=True)
+            # ts = ts.whiten(0.5, 0.25)
             ts_data[i] = np.array(ts)
 
         ts_data = np.transpose(ts_data, [1,0])
         ts_data /= abs(ts_data).max()
-        ts_data = ts_data * -1
+        # ts_data = ts_data * -1
         ts_data = ts_data.astype(np.float32)
         all_data_x[index] = ts_data
 
@@ -83,7 +83,7 @@ def save_files(rg_n, df=train_df):
 def make_tfrec_train(batches, batch_size, i):
 
        rg_n = range(i*batch_size,(i+1)*batch_size)
-       output_file = f"{savedir}/train_inv_{i:02}.tfrec"
+       output_file = f"{savedir}/train{i:02}.tfrec"
        if os.path.exists(output_file):
            print("file already exists")
            return
@@ -133,7 +133,7 @@ test_batch_size = test_df.shape[0] // test_batches
 def make_tfrec_test(test_batches, test_batch_size, i):
     rg_n = range(i*test_batch_size,(i+1)*test_batch_size)
     print(rg_n)
-    output_file = f"{savedir}/test_inv_{i:02}.tfrec"
+    output_file = f"{savedir}/test{i:02}.tfrec"
     if os.path.exists(output_file):
         print("test file already exists")
         return
