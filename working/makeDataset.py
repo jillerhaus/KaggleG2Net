@@ -17,7 +17,7 @@ import os
 INPUT_DIR = "../input/g2net-gravitational-wave-detection"
 train_df = pd.read_csv(f"{INPUT_DIR}/training_labels_paths.csv")
 test_df = pd.read_csv(f"{INPUT_DIR}/test_paths.csv")
-savedir = "../input/tfrec"
+savedir = "../input/whitened-longer-tfrec"
 
 
 # In[3]:
@@ -62,7 +62,7 @@ def save_files(rg_n, df=train_df):
 
             zpk = filts[i]
             # ts = ts.filter(zpk, filtfilt=True)
-            # ts = ts.whiten(0.5, 0.25)
+            ts = ts.whiten(1.0, 0.25)
             ts_data[i] = np.array(ts)
 
         ts_data = np.transpose(ts_data, [1,0])
