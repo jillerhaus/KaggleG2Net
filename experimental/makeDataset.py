@@ -20,10 +20,10 @@ from scipy import signal
 INPUT_DIR = "../input/g2net-gravitational-wave-detection"
 train_df = pd.read_csv(f"{INPUT_DIR}/training_labels_paths.csv")
 test_df = pd.read_csv(f"{INPUT_DIR}/test_paths.csv")
-savedir = "../input/like-synthetic-whitened-highpassed-tfrec"
+savedir = "../input/like-synthetic-short-whitened-highpassed-tfrec"
 
 
-def bandpass(x, lf=20, hf=500, order=8, sr=2048):
+def bandpass(x, lf=20, hf=500, order=16, sr=2048):
     sos = signal.butter(order, [lf,hf], btype="bandpass", output="sos", fs=sr)
     normalization = np.sqrt((hf-lf) / (sr/2))
     if x.ndim == 2:
@@ -36,7 +36,7 @@ def bandpass(x, lf=20, hf=500, order=8, sr=2048):
     return x
 
 
-def highpass(x, lf=20, order=8, sr=2048):
+def highpass(x, lf=20, order=16, sr=2048):
     sos = signal.butter(order, lf, btype="highpass", output="sos", fs=sr)
     normalization = np.sqrt((2048-lf) / (sr/2))
     if x.ndim == 2:
@@ -49,7 +49,6 @@ def highpass(x, lf=20, order=8, sr=2048):
     return x
 
 def prepare_wave(wave):
-    wave = np.load(train_df.path[0])
     normalized_waves = []
     scaling = np.array([1.5e-20,1.5e-20,0.5e-20], dtype = np.float32)
     for i in range(3):
@@ -90,9 +89,9 @@ def save_files(rg_n, df=train_df):
         all_data_y[index] = target
         ts_data = np.load(pth)
 
-        #ts_data = prepare_wave(ts_data)
+        ts_data = prepare_wave(ts_data)
 
-        #ts_data = bandpass(ts_data)
+        # ts_data = bandpass(ts_data)
 
         for i in range(3):
             measurement = ts_data[i]
@@ -102,7 +101,7 @@ def save_files(rg_n, df=train_df):
 
 #             zpk = filts[i]
 # #             ts = ts.filter(zpk, filtfilt=True)
-            ts = ts.whiten(0.5, 0.25)
+            ts = ts.whiten(0.125, 0.12)
             ts_data[i] = np.array(ts)
         ts_data = highpass(ts_data)
 
