@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 480, "train_mode": "full", "batch_size": 256, "epochs": 35, "seed": 1111, "changelog": "simple detection network with same pre-processing applied to synthetic training dataset as kaggle dataset", "bavg_epoch": 7, "bavg_loss": 0.4577597756184007, "bavg_auc": 0.8362639546394348}

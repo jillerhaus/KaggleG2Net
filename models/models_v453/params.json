@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 453, "train_mode": "full", "batch_size": 128, "epochs": 35, "seed": 42, "changelog": "second run with adam", "bavg_epoch": 12, "bavg_loss": 0.4096841214851937, "bavg_auc": 0.85451340675354}

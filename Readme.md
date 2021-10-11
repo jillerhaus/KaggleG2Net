@@ -23,7 +23,7 @@ My idea was based on the fact that this seemed rather wasteful, since 2D CNNs ar
 This is why I wanted to create a 1D solution, tailor-made for the problem. My proposed pipeline was:
 
 1. Basic signal filtering
-2. Use a encoder-decoder 1D network to reconstruct a possible signal without the noise to increase the signal to noise ratio(SNR) as much as possible. The current version of this network is a 1D CNN-LSTM model based on the architecture proposed in [this paper](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.064046).
+2. Use a encoder-decoder 1D network to reconstruct a possible signal without the noise to increase the signal to noise ratio(SNR) as much as possible. The current version of this network is a 1D CNN-LSTM model based on the architecture proposed in [this paper](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.104.064046). This network tries to reproduce a noiseless version of the original gravitational-wave. But the goal is to have it reduce the noise and therefore increase the signal to noise ratio(SNR) of the time series. The reasons for this are discussed extensively in `train_filter.ipynb`.
 3. Use another 1D CNN. The goal of this network was to detect the presence of a signal and in a later version determine the approximate parameters of the wave to be able to use matched filtering to calculate the signal-to-noise ratio of the event and calculate the statistical significance of the event.
 
 
@@ -35,7 +35,7 @@ This is why I wanted to create a 1D solution, tailor-made for the problem. My pr
 * papers: literature used during the project
 * models: pretrained models and a csv with model performance. The model directories include predictions on the test
 * working: stable version of the code files
-* experimental: "nightly" version of the code files
+* experimental: "nightly" version of the code files. Often includes code that is in progress.
 
 ### Code Files
 
@@ -56,7 +56,7 @@ This is why I wanted to create a 1D solution, tailor-made for the problem. My pr
 
 * `RandomDataset.ipynb`: creates a random sampling of raw noise files, that are available under `/root(of repo)/input/ggwp/output/<name of detector>/`. The file expects noise samples sampled at 4kHz from each of the detectors in the subdirectories [`/H1/`,`/L1/`,`/V1/`]. It looks for matching files and will only include them if the same time-slot is found for all three detectors.
 
-* `tfrec_from_prefilter.ipynb`: is intended as a pipeline for creating `tfrec` files with the pretrained filter if that proves to be advantageous, but currently is used to analyze different pre-trained versions of the filter on different datasets
+* `analyze_filter.ipynb`: in this notebook, the filter is applied to different datasets and the results are visualized.
 
 * `tfrecfromh5.ipynb`: this notebook is used to create `tfrec` files from synthetic datasets created using a version of the data generation code introduced in [this paper](https://arxiv.org/pdf/1904.08693.pdf), which allows for generating data of the Virgo detector in addition to the two LIGO detectors. It also includes some smaller changes and improvements.
 

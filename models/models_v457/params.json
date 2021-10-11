@@ -1,0 +1,1 @@
+{"lr": 0.0001, "version": 457, "train_mode": "full", "batch_size": 256, "epochs": 35, "seed": 42, "changelog": "new dataset with 0.125/0.12 whitening, before was 0.125/0.1", "bavg_epoch": 15, "bavg_loss": 0.4027731017513973, "bavg_auc": 0.8543908596038818}

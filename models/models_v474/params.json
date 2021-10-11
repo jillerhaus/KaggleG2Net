@@ -1,0 +1,1 @@
+{"lr": 5e-05, "version": 474, "train_mode": "full", "batch_size": 256, "epochs": 80, "seed": 1111, "changelog": "no whitening only lowpass & normalization", "bavg_epoch": 10, "bavg_loss": 0.41282417311439196, "bavg_auc": 0.855605959892273}
